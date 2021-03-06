@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13EB0DC39D80C084D38F617CC87C6FB3 /* alphaVideoPlayTool-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C928791F463ADC429418351B497AE6 /* alphaVideoPlayTool-dummy.m */; };
-		18B3D167C0DFE64DA8181D9B42335497 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		37D6FD6EEF7C8A7AB2088208A259AC5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		4FA7FA82CE8229DAE5D3E540E6282FD6 /* Pods-project-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 39EA6CFBEF48AB4E545355C4F1B988FD /* Pods-project-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		693F9436C33F5640CC05F7525D0E76CB /* SLMaskVideoPlayerLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ED0D3D2755F6B526E20F68580A590D4 /* SLMaskVideoPlayerLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		92A4016D48703AC223AED90D3C0C8F7F /* SLAlphaVideoDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = B88426B222A0B7A62AE74998C2616340 /* SLAlphaVideoDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		974B108E67EB83C7CC354139E1E1D942 /* SLMaskVideoPlayerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 04267465F06B9B86868FD61F907447A0 /* SLMaskVideoPlayerLayer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		52404AF3F66495F75FABC121568F4243 /* SLAlphaVideoDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA465D1B1726898C09B9001B453CF07 /* SLAlphaVideoDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B42EC7724F8389D3AAD7280D4CC5FAE /* alphaVideoPlayTool-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DA1524BA165365B2F1893E9B7FCC9B /* alphaVideoPlayTool-dummy.m */; };
+		9CDDF67E35E6BF52A610EFC31468ABD4 /* SLMaskVideoPlayerLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 19D941076BCACC20BBA070A554D9D0F4 /* SLMaskVideoPlayerLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D0A49214C76440EA3B906FD275DE3B0 /* SLMaskVideoPlayerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 174492136955C399DBC56A16CCF8A27A /* SLMaskVideoPlayerLayer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BF0C92644EC5F9790BDBA790296C9EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		BFFCEC1A3B65CE92D65CBB274D866950 /* alphaVideoPlayTool-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A40CFA64ACFE2210128C8232C504CB05 /* alphaVideoPlayTool-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4D2C702489CAC219B0DFAEB6DA2037E /* Pods-project-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CCE5FA2424F2DF14BB1C4AF9AA5A62 /* Pods-project-dummy.m */; };
+		DFD194E1AE6D652994277E36BA458D45 /* alphaVideoPlayTool-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 201D21508E0535AAE4ED3E4AF5AE4448 /* alphaVideoPlayTool-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		75229495938F9F6FB316CB46F05B08F0 /* PBXContainerItemProxy */ = {
+		674E131D11F2DCD06377F68992227454 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -29,33 +29,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04267465F06B9B86868FD61F907447A0 /* SLMaskVideoPlayerLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLMaskVideoPlayerLayer.m; path = Classes/SLMaskVideoPlayerLayer.m; sourceTree = "<group>"; };
 		0AEF2C29525B98FA90D8F6C56F21DD4F /* Pods-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-project.debug.xcconfig"; sourceTree = "<group>"; };
 		0EF4AF623982EBC299A9596201801515 /* Pods-project-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-project-Info.plist"; sourceTree = "<group>"; };
-		178DD6080CEFD3EF723845F89CD6E71A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		1AC2ED9FBD4C12B77DE72B24CDA606D2 /* alphaVideoPlayTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = alphaVideoPlayTool.framework; path = alphaVideoPlayTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		205B830A97C96CF850EC2771333B11BA /* alphaVideoPlayTool.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = alphaVideoPlayTool.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		174492136955C399DBC56A16CCF8A27A /* SLMaskVideoPlayerLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLMaskVideoPlayerLayer.m; path = Classes/SLMaskVideoPlayerLayer.m; sourceTree = "<group>"; };
+		19D941076BCACC20BBA070A554D9D0F4 /* SLMaskVideoPlayerLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLMaskVideoPlayerLayer.h; path = Classes/SLMaskVideoPlayerLayer.h; sourceTree = "<group>"; };
+		1AC2ED9FBD4C12B77DE72B24CDA606D2 /* alphaVideoPlayTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = alphaVideoPlayTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		201D21508E0535AAE4ED3E4AF5AE4448 /* alphaVideoPlayTool-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "alphaVideoPlayTool-umbrella.h"; sourceTree = "<group>"; };
+		26DA1524BA165365B2F1893E9B7FCC9B /* alphaVideoPlayTool-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "alphaVideoPlayTool-dummy.m"; sourceTree = "<group>"; };
 		293427C6279C01FFB8CBF041BB696438 /* Pods-project-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-project-acknowledgements.plist"; sourceTree = "<group>"; };
+		2DA465D1B1726898C09B9001B453CF07 /* SLAlphaVideoDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAlphaVideoDefines.h; path = Classes/SLAlphaVideoDefines.h; sourceTree = "<group>"; };
 		39EA6CFBEF48AB4E545355C4F1B988FD /* Pods-project-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-project-umbrella.h"; sourceTree = "<group>"; };
-		467C6BA3C867EAA9581D15C0366176FF /* alphaVideoPlayTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = alphaVideoPlayTool.debug.xcconfig; sourceTree = "<group>"; };
 		5895E14DED300D7AA71DD2A30C40222F /* Pods-project-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-project-acknowledgements.markdown"; sourceTree = "<group>"; };
-		59C928791F463ADC429418351B497AE6 /* alphaVideoPlayTool-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "alphaVideoPlayTool-dummy.m"; sourceTree = "<group>"; };
-		5D7626E72E5A38CB6BA5C2C2E8C8D11A /* alphaVideoPlayTool.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = alphaVideoPlayTool.modulemap; sourceTree = "<group>"; };
-		5ED0D3D2755F6B526E20F68580A590D4 /* SLMaskVideoPlayerLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLMaskVideoPlayerLayer.h; path = Classes/SLMaskVideoPlayerLayer.h; sourceTree = "<group>"; };
-		6B4B12F19580A99ED85CC24439796B9F /* alphaVideoPlayTool-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "alphaVideoPlayTool-Info.plist"; sourceTree = "<group>"; };
+		71BC57DEA8FB972BFAF16810FD6A76A7 /* alphaVideoPlayTool-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "alphaVideoPlayTool-prefix.pch"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		75CCE5FA2424F2DF14BB1C4AF9AA5A62 /* Pods-project-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-project-dummy.m"; sourceTree = "<group>"; };
-		9B6BB1FE8AFD2829CE286868886D0B19 /* alphaVideoPlayTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = alphaVideoPlayTool.release.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A40CFA64ACFE2210128C8232C504CB05 /* alphaVideoPlayTool-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "alphaVideoPlayTool-umbrella.h"; sourceTree = "<group>"; };
-		B88426B222A0B7A62AE74998C2616340 /* SLAlphaVideoDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAlphaVideoDefines.h; path = Classes/SLAlphaVideoDefines.h; sourceTree = "<group>"; };
-		D6AA55633DDE1F0396CE3DB0D6DC4AB9 /* Pods_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_project.framework; path = "Pods-project.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		934381223245F7D2FD2B8EB4832DBDB4 /* alphaVideoPlayTool.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = alphaVideoPlayTool.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B58C53DD8FB9B751FA7BAFC32F0971C5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B5E28509C2B38FB915FC4203A2476C4C /* alphaVideoPlayTool-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "alphaVideoPlayTool-Info.plist"; sourceTree = "<group>"; };
+		C2752C6E19AB632A28374FFC3581027F /* alphaVideoPlayTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = alphaVideoPlayTool.debug.xcconfig; sourceTree = "<group>"; };
+		D6AA55633DDE1F0396CE3DB0D6DC4AB9 /* Pods_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7A4B25C71E6B948AFAAD83CF99893B /* Pods-project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-project.release.xcconfig"; sourceTree = "<group>"; };
 		EAE795C2994EBD20B587EDAE31DCAC25 /* Pods-project.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-project.modulemap"; sourceTree = "<group>"; };
-		EBB55A13F522B46EAA8AC1684BCDF80D /* alphaVideoPlayTool-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "alphaVideoPlayTool-prefix.pch"; sourceTree = "<group>"; };
+		F50C871F5918B10F276F0FC172A8E284 /* alphaVideoPlayTool.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = alphaVideoPlayTool.modulemap; sourceTree = "<group>"; };
+		FA7424780A455D881C35730B9DD79E70 /* alphaVideoPlayTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = alphaVideoPlayTool.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		068CDA0979FC3E89054FD0F4C27DE153 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37D6FD6EEF7C8A7AB2088208A259AC5C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5454F22F2AD4A0546785BFDEB7E75F86 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,45 +72,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8187153AA21C26D9B6F823A4D56E988 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18B3D167C0DFE64DA8181D9B42335497 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22948704DA0CE6078C256CC3C3C5487F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				5D7626E72E5A38CB6BA5C2C2E8C8D11A /* alphaVideoPlayTool.modulemap */,
-				59C928791F463ADC429418351B497AE6 /* alphaVideoPlayTool-dummy.m */,
-				6B4B12F19580A99ED85CC24439796B9F /* alphaVideoPlayTool-Info.plist */,
-				EBB55A13F522B46EAA8AC1684BCDF80D /* alphaVideoPlayTool-prefix.pch */,
-				A40CFA64ACFE2210128C8232C504CB05 /* alphaVideoPlayTool-umbrella.h */,
-				467C6BA3C867EAA9581D15C0366176FF /* alphaVideoPlayTool.debug.xcconfig */,
-				9B6BB1FE8AFD2829CE286868886D0B19 /* alphaVideoPlayTool.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "project/Pods/Target Support Files/alphaVideoPlayTool";
-			sourceTree = "<group>";
-		};
-		357C75787CF80CF4A1B28FEB56F9AF5A /* alphaVideoPlayTool */ = {
-			isa = PBXGroup;
-			children = (
-				B88426B222A0B7A62AE74998C2616340 /* SLAlphaVideoDefines.h */,
-				5ED0D3D2755F6B526E20F68580A590D4 /* SLMaskVideoPlayerLayer.h */,
-				04267465F06B9B86868FD61F907447A0 /* SLMaskVideoPlayerLayer.m */,
-				7FAF048068F5D6B2EA60C6E8B6B38E80 /* Pod */,
-				22948704DA0CE6078C256CC3C3C5487F /* Support Files */,
-			);
-			name = alphaVideoPlayTool;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		3E4080750FA3B1CEC0CC39F371298F96 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,21 +107,40 @@
 			path = "Target Support Files/Pods-project";
 			sourceTree = "<group>";
 		};
-		7FAF048068F5D6B2EA60C6E8B6B38E80 /* Pod */ = {
+		7FD39E918F0AD9898143BB52694AF7D3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				205B830A97C96CF850EC2771333B11BA /* alphaVideoPlayTool.podspec */,
-				178DD6080CEFD3EF723845F89CD6E71A /* LICENSE */,
+				F50C871F5918B10F276F0FC172A8E284 /* alphaVideoPlayTool.modulemap */,
+				26DA1524BA165365B2F1893E9B7FCC9B /* alphaVideoPlayTool-dummy.m */,
+				B5E28509C2B38FB915FC4203A2476C4C /* alphaVideoPlayTool-Info.plist */,
+				71BC57DEA8FB972BFAF16810FD6A76A7 /* alphaVideoPlayTool-prefix.pch */,
+				201D21508E0535AAE4ED3E4AF5AE4448 /* alphaVideoPlayTool-umbrella.h */,
+				C2752C6E19AB632A28374FFC3581027F /* alphaVideoPlayTool.debug.xcconfig */,
+				FA7424780A455D881C35730B9DD79E70 /* alphaVideoPlayTool.release.xcconfig */,
 			);
-			name = Pod;
+			name = "Support Files";
+			path = "project/Pods/Target Support Files/alphaVideoPlayTool";
 			sourceTree = "<group>";
 		};
-		8534A1449BBDF5B316158126F97AB7B3 /* Development Pods */ = {
+		91A2B5CBE18ACAA5A03BF6D9D8643F0D /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				357C75787CF80CF4A1B28FEB56F9AF5A /* alphaVideoPlayTool */,
+				B3FEFF10EE88D3E7BA061C0D8FFD0450 /* alphaVideoPlayTool */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		B3FEFF10EE88D3E7BA061C0D8FFD0450 /* alphaVideoPlayTool */ = {
+			isa = PBXGroup;
+			children = (
+				2DA465D1B1726898C09B9001B453CF07 /* SLAlphaVideoDefines.h */,
+				19D941076BCACC20BBA070A554D9D0F4 /* SLMaskVideoPlayerLayer.h */,
+				174492136955C399DBC56A16CCF8A27A /* SLMaskVideoPlayerLayer.m */,
+				EFA90A9ECE40FE56413C68A2DB4BCCD3 /* Pod */,
+				7FD39E918F0AD9898143BB52694AF7D3 /* Support Files */,
+			);
+			name = alphaVideoPlayTool;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		BADFA1E0909C4A3E609916A708DFFA82 /* Products */ = {
@@ -165,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				8534A1449BBDF5B316158126F97AB7B3 /* Development Pods */,
+				91A2B5CBE18ACAA5A03BF6D9D8643F0D /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				BADFA1E0909C4A3E609916A708DFFA82 /* Products */,
 				3E4080750FA3B1CEC0CC39F371298F96 /* Targets Support Files */,
@@ -180,16 +171,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EFA90A9ECE40FE56413C68A2DB4BCCD3 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				934381223245F7D2FD2B8EB4832DBDB4 /* alphaVideoPlayTool.podspec */,
+				B58C53DD8FB9B751FA7BAFC32F0971C5 /* LICENSE */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5FF26B239334016379226C7FB3C79853 /* Headers */ = {
+		57560A2AE1C098D221AB45C1BA91403D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFFCEC1A3B65CE92D65CBB274D866950 /* alphaVideoPlayTool-umbrella.h in Headers */,
-				92A4016D48703AC223AED90D3C0C8F7F /* SLAlphaVideoDefines.h in Headers */,
-				693F9436C33F5640CC05F7525D0E76CB /* SLMaskVideoPlayerLayer.h in Headers */,
+				DFD194E1AE6D652994277E36BA458D45 /* alphaVideoPlayTool-umbrella.h in Headers */,
+				52404AF3F66495F75FABC121568F4243 /* SLAlphaVideoDefines.h in Headers */,
+				9CDDF67E35E6BF52A610EFC31468ABD4 /* SLMaskVideoPlayerLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,12 +206,12 @@
 /* Begin PBXNativeTarget section */
 		87B03DC62843F6B1BCA92765BD36092F /* alphaVideoPlayTool */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD40C7D5107EF6888E26BBDBDF382360 /* Build configuration list for PBXNativeTarget "alphaVideoPlayTool" */;
+			buildConfigurationList = 7CA94C4B54C161BD4770ADFA862FAF4A /* Build configuration list for PBXNativeTarget "alphaVideoPlayTool" */;
 			buildPhases = (
-				5FF26B239334016379226C7FB3C79853 /* Headers */,
-				2180277AC0E8BE1463E265D1F2979014 /* Sources */,
-				B8187153AA21C26D9B6F823A4D56E988 /* Frameworks */,
-				365F043B06077C49ECBD1100A333E421 /* Resources */,
+				57560A2AE1C098D221AB45C1BA91403D /* Headers */,
+				47DA6D344A7DCAF8A2AD009BBF4359E1 /* Sources */,
+				068CDA0979FC3E89054FD0F4C27DE153 /* Frameworks */,
+				A443A99C18F4BE30E41302E990EDF78F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -234,7 +234,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5BEE07D8213A097E1B6B29D9DD1CC010 /* PBXTargetDependency */,
+				AB6D8613D0FD1A96C5990547442ED351 /* PBXTargetDependency */,
 			);
 			name = "Pods-project";
 			productName = "Pods-project";
@@ -270,14 +270,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		365F043B06077C49ECBD1100A333E421 /* Resources */ = {
+		806C51D14808A070F1B58ED4231F7206 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		806C51D14808A070F1B58ED4231F7206 /* Resources */ = {
+		A443A99C18F4BE30E41302E990EDF78F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,12 +287,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2180277AC0E8BE1463E265D1F2979014 /* Sources */ = {
+		47DA6D344A7DCAF8A2AD009BBF4359E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13EB0DC39D80C084D38F617CC87C6FB3 /* alphaVideoPlayTool-dummy.m in Sources */,
-				974B108E67EB83C7CC354139E1E1D942 /* SLMaskVideoPlayerLayer.m in Sources */,
+				6B42EC7724F8389D3AAD7280D4CC5FAE /* alphaVideoPlayTool-dummy.m in Sources */,
+				9D0A49214C76440EA3B906FD275DE3B0 /* SLMaskVideoPlayerLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,50 +307,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5BEE07D8213A097E1B6B29D9DD1CC010 /* PBXTargetDependency */ = {
+		AB6D8613D0FD1A96C5990547442ED351 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = alphaVideoPlayTool;
 			target = 87B03DC62843F6B1BCA92765BD36092F /* alphaVideoPlayTool */;
-			targetProxy = 75229495938F9F6FB316CB46F05B08F0 /* PBXContainerItemProxy */;
+			targetProxy = 674E131D11F2DCD06377F68992227454 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		13B4D8E6A18B38D9A560A825706704D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B6BB1FE8AFD2829CE286868886D0B19 /* alphaVideoPlayTool.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/alphaVideoPlayTool/alphaVideoPlayTool-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/alphaVideoPlayTool/alphaVideoPlayTool-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/alphaVideoPlayTool/alphaVideoPlayTool.modulemap";
-				PRODUCT_MODULE_NAME = alphaVideoPlayTool;
-				PRODUCT_NAME = alphaVideoPlayTool;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -454,6 +419,41 @@
 			};
 			name = Release;
 		};
+		77234B293B2283176B853295D311C0D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA7424780A455D881C35730B9DD79E70 /* alphaVideoPlayTool.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/alphaVideoPlayTool/alphaVideoPlayTool-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/alphaVideoPlayTool/alphaVideoPlayTool-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/alphaVideoPlayTool/alphaVideoPlayTool.modulemap";
+				PRODUCT_MODULE_NAME = alphaVideoPlayTool;
+				PRODUCT_NAME = alphaVideoPlayTool;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		82B296D39C9445CA187789AFA0B3AA13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0AEF2C29525B98FA90D8F6C56F21DD4F /* Pods-project.debug.xcconfig */;
@@ -490,9 +490,9 @@
 			};
 			name = Debug;
 		};
-		C3312577C653987ED09674456F6E0916 /* Debug */ = {
+		B1F25F3828D9AE56497F016B0A613CA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 467C6BA3C867EAA9581D15C0366176FF /* alphaVideoPlayTool.debug.xcconfig */;
+			baseConfigurationReference = C2752C6E19AB632A28374FFC3581027F /* alphaVideoPlayTool.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -607,11 +607,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD40C7D5107EF6888E26BBDBDF382360 /* Build configuration list for PBXNativeTarget "alphaVideoPlayTool" */ = {
+		7CA94C4B54C161BD4770ADFA862FAF4A /* Build configuration list for PBXNativeTarget "alphaVideoPlayTool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C3312577C653987ED09674456F6E0916 /* Debug */,
-				13B4D8E6A18B38D9A560A825706704D5 /* Release */,
+				B1F25F3828D9AE56497F016B0A613CA3 /* Debug */,
+				77234B293B2283176B853295D311C0D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
