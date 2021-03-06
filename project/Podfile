@@ -1,0 +1,29 @@
+
+platform :ios, "9.0"
+
+
+
+targetsPodArrays = ['project']
+
+inhibit_all_warnings!
+
+
+#use_frameworks!
+
+source 'https://cdn.cocoapods.org/'
+
+targetsPodArrays.each do |t|
+
+    target t do
+
+   use_frameworks! :linkage => :static
+
+  # Pods for Project
+  
+  pod 'alphaVideoPlayTool', :path => '../../alphaVideoPlayTool'  
+
+
+
+  
+ end
+end

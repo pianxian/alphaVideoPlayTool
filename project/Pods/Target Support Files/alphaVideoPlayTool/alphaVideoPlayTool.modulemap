@@ -1,0 +1,6 @@
+framework module alphaVideoPlayTool {
+  umbrella header "alphaVideoPlayTool-umbrella.h"
+
+  export *
+  module * { export * }
+}

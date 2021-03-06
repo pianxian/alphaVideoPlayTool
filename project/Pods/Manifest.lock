@@ -1,0 +1,16 @@
+PODS:
+  - alphaVideoPlayTool (0.0.1)
+
+DEPENDENCIES:
+  - alphaVideoPlayTool (from `../../alphaVideoPlayTool`)
+
+EXTERNAL SOURCES:
+  alphaVideoPlayTool:
+    :path: "../../alphaVideoPlayTool"
+
+SPEC CHECKSUMS:
+  alphaVideoPlayTool: 2e5369bf2a0aa4ac9ec6740f40bde1c355e6df1d
+
+PODFILE CHECKSUM: 070acfdf9ca9ed52afa2021c7413808df55e1ccc
+
+COCOAPODS: 1.10.1
