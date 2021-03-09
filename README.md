@@ -11,7 +11,10 @@ cocopods 导入 pod 'alphaVideoPlayTool'
 
 
 使用方法
-导入 #import <SLMaskVideoPlayerLayer.h>
+导入 
+```
+
+#import <SLMaskVideoPlayerLayer.h>
 
 
 _playerLayer = [SLMaskVideoPlayerLayer layer];
@@ -25,7 +28,7 @@ _playerLayer.playDelegate = self;
 _playerLayer.frame = self.view.bounds;
 
 [_playerLayer play];
-    
+ ```
 还需要在项目中添加 metal文件 filter.metal 放在demo中 
 下载后拖进项目并在buildSetting 中搜索 metal 
 在 Other Metal Linker Flags 和 Other Metal Compiler Flags中添加设置-fcikernel
