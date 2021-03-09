@@ -5,8 +5,10 @@
 
 基于苹果Metal框架给带alpha通道的视频添加滤镜效果实现合成透明视频效果
 
-cocopods 导入 pod 'alphaVideoPlayTool'
-
+cocopods 导入 
+```
+pod 'alphaVideoPlayTool'
+ ```
 
 
 
