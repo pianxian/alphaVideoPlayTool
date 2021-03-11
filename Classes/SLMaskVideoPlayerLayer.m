@@ -44,7 +44,6 @@
         _maskDirection = alphaVideoMaskDirectionLeftToRight;
         self.pixelBufferAttributes = @{@"PixelFormatType":@(kCMPixelFormat_32BGRA)};
         self.videoGravity = AVLayerVideoGravityResizeAspectFill;
-        self.player = self.videoPlayer;
     }
     return self;
 }
@@ -54,6 +53,8 @@
 /// @param videoURL 视频路径
 -(void)setVideoURL:(NSURL *)videoURL{
     _videoURL = videoURL;
+    self.player = self.videoPlayer;
+
     AVURLAsset *videoAsset = [AVURLAsset assetWithURL:videoURL];
     [videoAsset loadValuesAsynchronouslyForKeys:@[@"duration",@"tracks"] completionHandler:^{
         dispatch_async(dispatch_get_main_queue(), ^{
