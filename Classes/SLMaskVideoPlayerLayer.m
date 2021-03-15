@@ -108,7 +108,12 @@
 -(void)intilizaPlayItemComposition:(AVPlayerItem *)playItem{
     //获取轨道
     NSArray <AVAssetTrack *> *assetTracks = playItem.asset.tracks;
+#if DEBUG
     NSAssert(assetTracks, @"NO tracks please check video source");
+#else
+    return;
+#endif
+
     CGSize videoSize = CGSizeZero;
     switch (_maskDirection) {
         case alphaVideoMaskDirectionLeftToRight:
@@ -124,7 +129,12 @@
         default:
             break;
     }
+#if DEBUG
     NSAssert(videoSize.width && videoSize.height, @"videoSize can't be zero");
+#else
+    return;
+#endif
+
     
     AVMutableVideoComposition *videoComposition = [AVMutableVideoComposition videoCompositionWithAsset:playItem.asset applyingCIFiltersWithHandler:^(AVAsynchronousCIImageFilteringRequest * _Nonnull request) {
         //source rect this is you will show
@@ -159,7 +169,12 @@
                 NSError *error;
                 NSData *kernelData = [NSData dataWithContentsOfURL:kernelURL];
                 videoKernel = [CIColorKernel kernelWithFunctionName:@"maskVideoMetal" fromMetalLibraryData:kernelData error:&error];
+                #if DEBUG
                 NSAssert(!error, @"%@",error);
+                #else
+                return;
+                #endif
+                
 //                NSLog(@"---error%@",error);
                 
             }
