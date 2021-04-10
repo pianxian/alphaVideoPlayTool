@@ -111,7 +111,8 @@
 #if DEBUG
     NSAssert(assetTracks, @"NO tracks please check video source");
 #else
-    return;
+    if(!assetTracks.count)return;
+
 #endif
 
     CGSize videoSize = CGSizeZero;
@@ -132,7 +133,8 @@
 #if DEBUG
     NSAssert(videoSize.width && videoSize.height, @"videoSize can't be zero");
 #else
-    return;
+    if (!videoSize.width ||!videoSize.height) return;
+
 #endif
 
     
@@ -172,7 +174,7 @@
                 #if DEBUG
                 NSAssert(!error, @"%@",error);
                 #else
-                return;
+           
                 #endif
                 
 //                NSLog(@"---error%@",error);
