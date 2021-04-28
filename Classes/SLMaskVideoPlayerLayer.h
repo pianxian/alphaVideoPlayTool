@@ -49,6 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 设置Session
 -(void)initSession;
 -(void)clear;
+-(void)didFinishPlay;
 @end
 
 NS_ASSUME_NONNULL_END

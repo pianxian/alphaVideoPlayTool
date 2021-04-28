@@ -44,8 +44,15 @@
         _maskDirection = alphaVideoMaskDirectionLeftToRight;
         self.pixelBufferAttributes = @{@"PixelFormatType":@(kCMPixelFormat_32BGRA)};
         self.videoGravity = AVLayerVideoGravityResizeAspectFill;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopPlay) name:UIApplicationWillResignActiveNotification object:nil];//进入后台结束播放
     }
     return self;
+}
+
+
+/// //进入后台结束播放
+-(void)stopPlay{
+    [self didFinishPlay];
 }
 
 
