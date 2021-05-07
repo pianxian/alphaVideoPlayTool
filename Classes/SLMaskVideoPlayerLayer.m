@@ -14,11 +14,9 @@
     NSInteger _playCount;
 }
 
-/// 视频播放器
-@property (nonatomic,strong) AVPlayer *videoPlayer;
 
-///// playItem
-@property (nonatomic,strong) AVPlayerItem *playItem;
+
+
 
 @end
 

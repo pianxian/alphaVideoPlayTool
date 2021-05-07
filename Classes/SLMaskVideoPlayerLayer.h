@@ -40,7 +40,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// playDelegate
 @property (nonatomic,weak) id<maskVideoPlayDelegate>playDelegate;
-
+/// 视频播放器
+@property (nonatomic,strong,nullable) AVPlayer *videoPlayer;
+///// playItem
+@property (nonatomic,strong,nullable) AVPlayerItem *playItem;
 /// video begain play
 -(void)play;
 
