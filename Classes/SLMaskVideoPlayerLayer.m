@@ -222,12 +222,11 @@
             default:
                 break;
         }
-        
-        CIImage *outPutImage = [videoKernel applyWithExtent:inputImage.extent arguments:@[(id)inputImage,(id)maskImage]];
-        
-        
-        
-        [request finishWithImage:outPutImage context:nil];
+        if (inputImage && maskImage) {
+            CIImage *outPutImage = [videoKernel applyWithExtent:inputImage.extent arguments:@[(id)inputImage,(id)maskImage]];
+            [request finishWithImage:outPutImage context:nil];
+        }
+
     }];
     videoComposition.renderSize = videoSize;
     playItem.videoComposition = videoComposition;
