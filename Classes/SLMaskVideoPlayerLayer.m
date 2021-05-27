@@ -224,7 +224,9 @@
         }
         if (inputImage && maskImage) {
             CIImage *outPutImage = [videoKernel applyWithExtent:inputImage.extent arguments:@[(id)inputImage,(id)maskImage]];
-            [request finishWithImage:outPutImage context:nil];
+            if (outPutImage) {
+                [request finishWithImage:outPutImage context:nil];
+            }
         }
 
     }];
@@ -299,7 +301,7 @@
 
 /// 设置Session
 -(void)initSession{
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:NULL];
+//    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:NULL];
 }
 
 /// video pause
