@@ -7,7 +7,7 @@
 
 #import "ViewController.h"
 #import <SLMaskVideoPlayerLayer.h>
-
+#import <AVFoundation/AVFoundation.h>
 @interface ViewController ()<maskVideoPlayDelegate>{
     SLMaskVideoPlayerLayer *_playerLayer;
     
@@ -20,17 +20,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _playerLayer = [SLMaskVideoPlayerLayer layer];
-    _playerLayer.videoURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"手表" ofType:@"mp4"]];
     _playerLayer.playDelegate = self;
-    [self.view.layer addSublayer:_playerLayer];
     _playerLayer.frame = self.view.bounds;
-    [_playerLayer play];
+    [self play];
 }
+
+
 -(void)maskVideoDidPlayFinish:(SLMaskVideoPlayerLayer *)playerLayer{
-    
+    [_playerLayer removeFromSuperlayer];
+}
+-(void)play{
+    _playerLayer.videoURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"giftId-608a5a20bb58c31a408c7e9e" ofType:@"mp4"]];
+
+    [self.view.layer addSublayer:_playerLayer];
+    [_playerLayer play];
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [_playerLayer play];
+    [self play];
+
 }
 @end

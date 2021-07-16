@@ -14,9 +14,7 @@
     NSInteger _playCount;
 }
 
-
-
-
+@property (nonatomic,assign) id observer;
 
 @end
 
@@ -42,13 +40,107 @@
         _maskDirection = alphaVideoMaskDirectionLeftToRight;
         self.pixelBufferAttributes = @{@"PixelFormatType":@(kCMPixelFormat_32BGRA)};
         self.videoGravity = AVLayerVideoGravityResizeAspectFill;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopPlay) name:UIApplicationWillResignActiveNotification object:nil];//进入后台结束播放
+        NSNotificationCenter *noficationCenter = [NSNotificationCenter defaultCenter];
+
+        [noficationCenter addObserver:self selector:@selector(stopPlay) name:UIApplicationWillResignActiveNotification object:nil];//进入后台结束播放
+        [noficationCenter addObserver:self selector:@selector(silenceSecondaryAudioHint) name:AVAudioSessionSilenceSecondaryAudioHintNotification object:nil];
+        [noficationCenter addObserver:self selector:@selector(mediaServicesWereLost) name:AVAudioSessionMediaServicesWereLostNotification object:nil];
+        [noficationCenter addObserver:self selector:@selector(mediaServicesWereLost) name:AVAudioSessionMediaServicesWereResetNotification object:nil];
+        [noficationCenter addObserver:self selector:@selector(sessionInterruption) name:AVAudioSessionInterruptionNotification object:nil];
+        [noficationCenter addObserver:self selector:@selector(failedToEndTime) name:AVPlayerItemFailedToPlayToEndTimeNotification object:nil];
+        [noficationCenter addObserver:self selector:@selector(playBackStalled) name:AVPlayerItemPlaybackStalledNotification object:nil];
+//耳机事件
+        [noficationCenter addObserver:self selector:@selector(handleRouteChange:) name:AVAudioSessionRouteChangeNotification object:[AVAudioSession sharedInstance]];
     }
     return self;
 }
 
+-(void)handleRouteChange:(NSNotification *)notifi{
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+       NSString *seccReason = @"";
+       NSInteger reason = [[[notifi userInfo] objectForKey:AVAudioSessionRouteChangeReasonKey] integerValue];
+       switch (reason) {
+           case AVAudioSessionRouteChangeReasonNoSuitableRouteForCategory:
+               seccReason = @"The route changed because no suitable route is now available for the specified category.";
+               break;
+           case AVAudioSessionRouteChangeReasonWakeFromSleep:
+               seccReason = @"The route changed when the device woke up from sleep.";
+               break;
+           case AVAudioSessionRouteChangeReasonRouteConfigurationChange:
+               seccReason = @"The output route configuration changed.";
+               break;
+           case AVAudioSessionRouteChangeReasonOverride:
+               seccReason = @"The output route was overridden by the app.";
+               break;
+           case AVAudioSessionRouteChangeReasonCategoryChange:{
+               seccReason = @"The output route category changed.";
+           }
+               break;
+           case AVAudioSessionRouteChangeReasonOldDeviceUnavailable:{
 
-/// //进入后台结束播放
+               if (self.isPlaying){
+                   [self resum];
+                   NSLog(@"恢复播放");
+               }
+           }
+               break;
+           case AVAudioSessionRouteChangeReasonNewDeviceAvailable:{
+               if (self.isPlaying){
+                   [self resum];
+                   NSLog(@"恢复播放");
+               }
+
+           }
+               break;
+           case AVAudioSessionRouteChangeReasonUnknown:{
+               seccReason = [NSString stringWithFormat:@"AVAudioSession Route change Reason is %ld (oldUnavailiable:2,newDevice:1,unknown:0)",(long)reason];
+           }
+               break;
+           default:
+               seccReason = [NSString stringWithFormat:@"The reason invalidate enum value : %ld",(long)reason];
+               break;
+       }
+       
+       AVAudioSessionRouteDescription *currentRoute = session.currentRoute;
+       for (AVAudioSessionPortDescription *output in currentRoute.outputs) {
+           if ([output.portType isEqualToString:AVAudioSessionPortBluetoothA2DP] || [output.portType isEqualToString:AVAudioSessionPortBluetoothLE ]|| [output.portType isEqualToString:AVAudioSessionPortBluetoothHFP]) { //耳机
+               NSLog(@"耳机播放");
+           }else {
+               NSLog(@"扬声器播放");
+           }
+       }
+       NSLog(@"handleRouteChange reason is %@,mode:%@,category:%@", seccReason,session.mode,session.category);
+
+}
+//耳机拔插
+-(void)silenceSecondaryAudioHint{
+    NSLog(@"AVAudioSessionSilenceSecondaryAudioHintNotification");
+    if (self.isPlaying)[self resum];
+}
+//媒体服务器终止、重启
+-(void)mediaServicesWereLost{
+    NSLog(@"AVAudioSessionMediaServicesWereLostNotification");
+    if (self.isPlaying)[self stopPlay];
+
+}
+//音频中断
+-(void)sessionInterruption{
+    NSLog(@"AVAudioSessionInterruptionNotification");
+    if (self.isPlaying)[self stopPlay];
+}
+//播放失败
+-(void)failedToEndTime{
+    if (self.isPlaying)[self stopPlay];
+    NSLog(@"AVPlayerItemFailedToPlayToEndTimeNotification");
+}
+//异常中断
+-(void)playBackStalled{
+    NSLog(@"AVPlayerItemPlaybackStalledNotification");
+    if (self.isPlaying)[self stopPlay];
+}
+
+
+//进入后台结束播放
 -(void)stopPlay{
     [self didFinishPlay];
 }
@@ -65,7 +157,6 @@
         dispatch_async(dispatch_get_main_queue(), ^{
     
             AVPlayerItem *playItem = [[AVPlayerItem alloc] initWithAsset:videoAsset];
-//            self->_playItem = playItem;
             [self intilizaAudioTacks:self->_muted];
             [self intilizaPlayItem:playItem];
         });
@@ -86,12 +177,11 @@
 
     NSMutableArray *allAudioParams = [NSMutableArray array];
     for (AVAssetTrack *track in audioTracks) {
-      AVMutableAudioMixInputParameters *audioInputParams =
-        [AVMutableAudioMixInputParameters audioMixInputParameters];
+        AVMutableAudioMixInputParameters *audioInputParams = [AVMutableAudioMixInputParameters audioMixInputParameters];
 
         [audioInputParams setVolume:muted ? 0:[AVAudioSession sharedInstance].outputVolume atTime:kCMTimeZero];
-      [audioInputParams setTrackID:[track trackID]];
-      [allAudioParams addObject:audioInputParams];
+        [audioInputParams setTrackID:[track trackID]];
+        [allAudioParams addObject:audioInputParams];
     }
 
     AVMutableAudioMix *audioMix = [AVMutableAudioMix audioMix];
@@ -117,7 +207,6 @@
     NSAssert(assetTracks, @"NO tracks please check video source");
 #else
     if(!assetTracks.count)return;
-
 #endif
 
     CGSize videoSize = CGSizeZero;
@@ -139,7 +228,6 @@
     NSAssert(videoSize.width && videoSize.height, @"videoSize can't be zero");
 #else
     if (!videoSize.width ||!videoSize.height) return;
-
 #endif
 
     
@@ -178,12 +266,7 @@
                 videoKernel = [CIColorKernel kernelWithFunctionName:@"maskVideoMetal" fromMetalLibraryData:kernelData error:&error];
                 #if DEBUG
                 NSAssert(!error, @"%@",error);
-                #else
-           
                 #endif
-                
-//                NSLog(@"---error%@",error);
-                
             }
         } else {
             if (!videoKernel) {
@@ -263,21 +346,15 @@
 /// 设置observer
 /// @param playItem playItem
 -(void)intilizaItemObserver:(AVPlayerItem *)playItem{
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoDidPlayFihisn) name:AVPlayerItemDidPlayToEndTimeNotification object:playItem];
 }
 
 -(void)didFinishPlay{
     NSLog(@"play Finish");
-
     [self clear];
-
-
-    if (_playDelegate &&[_playDelegate respondsToSelector:@selector(maskVideoDidPlayFinish:)]) {
-        [self.playDelegate maskVideoDidPlayFinish:self];
-    }
-
-
+    if (_playDelegate &&[_playDelegate respondsToSelector:@selector(maskVideoDidPlayFinish:)]) [self.playDelegate maskVideoDidPlayFinish:self];
+    
+    if (_observer) [[NSNotificationCenter defaultCenter] removeObserver:_observer];
 }
 -(void)clear{
     [self pause];
@@ -286,17 +363,19 @@
     [_videoPlayer replaceCurrentItemWithPlayerItem:nil];
     _videoPlayer = nil;
 
-    if (_playItem) {
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:_playItem];
+    if (_playItem) [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:_playItem];
         _playItem = nil;
 
-    }
     [self removeFromSuperlayer];
 }
 /// video begain play
 -(void)play{
+    _playing = YES;
     [self initSession];
     [_videoPlayer play];
+    _observer = [_videoPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+        _currentTime = time;
+    }];
 }
 
 /// 设置Session
@@ -306,9 +385,21 @@
 
 /// video pause
 -(void)pause{
+    _playing = NO;
     [_videoPlayer pause];
 }
 
+/// video resum
+-(void)resum{
+    [_videoPlayer seekToTime:_currentTime completionHandler:^(BOOL finished) {
+        if (finished) {
+            NSLog(@"seek到指定时间重新播放");
+            [_videoPlayer play];
+        }else{
+            [self videoDidPlayFihisn];
+        }
+    }];
+}
 
 
 @end

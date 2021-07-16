@@ -37,6 +37,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 视频路径 支持URL 下载播放
 @property (nonatomic,strong) NSURL *videoURL;
 
+/// 当前播放进度
+@property (nonatomic,readonly) CMTime currentTime;
+
+/// 是否正在播放
+@property (nonatomic,assign,readonly,getter=isPlaying) BOOL playing;
 
 /// playDelegate
 @property (nonatomic,weak) id<maskVideoPlayDelegate>playDelegate;
@@ -53,6 +58,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)initSession;
 -(void)clear;
 -(void)didFinishPlay;
+/// video resum
+-(void)resum;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -18,6 +18,9 @@
 		32178A0725F3300700F2B51A /* projectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32178A0625F3300700F2B51A /* projectUITests.m */; };
 		32178A2525F3500300F2B51A /* 手表.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 32178A2425F3500300F2B51A /* 手表.mp4 */; };
 		32178A3A25F35F8100F2B51A /* filter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 32178A3925F35F8100F2B51A /* filter.metal */; };
+		3279D69826A01ACA007C106F /* giftId-608a5a20bb58c31a408c7e9e.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3279D69726A01ACA007C106F /* giftId-608a5a20bb58c31a408c7e9e.mp4 */; };
+		3279D69A26A02124007C106F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3279D69926A02124007C106F /* AVFoundation.framework */; };
+		3279D69E26A0212F007C106F /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3279D69D26A0212F007C106F /* AVKit.framework */; };
 		4C1DFEB0C0845A60195F36AF /* Pods_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00CC7CE4D39742F4909A9B3 /* Pods_project.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +63,10 @@
 		32178A0825F3300700F2B51A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32178A2425F3500300F2B51A /* 手表.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "手表.mp4"; sourceTree = SOURCE_ROOT; };
 		32178A3925F35F8100F2B51A /* filter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = filter.metal; sourceTree = "<group>"; };
+		3279D69726A01ACA007C106F /* giftId-608a5a20bb58c31a408c7e9e.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "giftId-608a5a20bb58c31a408c7e9e.mp4"; sourceTree = "<group>"; };
+		3279D69926A02124007C106F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3279D69B26A02128007C106F /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
+		3279D69D26A0212F007C106F /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		B00CC7CE4D39742F4909A9B3 /* Pods_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEDEE9855F54B745D9CC5DA2 /* Pods-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project.debug.xcconfig"; path = "Target Support Files/Pods-project/Pods-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3279D69A26A02124007C106F /* AVFoundation.framework in Frameworks */,
+				3279D69E26A0212F007C106F /* AVKit.framework in Frameworks */,
 				4C1DFEB0C0845A60195F36AF /* Pods_project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				32178A3925F35F8100F2B51A /* filter.metal */,
+				3279D69726A01ACA007C106F /* giftId-608a5a20bb58c31a408c7e9e.mp4 */,
 				32178A2425F3500300F2B51A /* 手表.mp4 */,
 				321789DF25F3300500F2B51A /* AppDelegate.h */,
 				321789E025F3300500F2B51A /* AppDelegate.m */,
@@ -153,6 +163,9 @@
 		E03F238C9BC9329B8827EA70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3279D69D26A0212F007C106F /* AVKit.framework */,
+				3279D69B26A02128007C106F /* AVFAudio.framework */,
+				3279D69926A02124007C106F /* AVFoundation.framework */,
 				B00CC7CE4D39742F4909A9B3 /* Pods_project.framework */,
 			);
 			name = Frameworks;
@@ -271,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32178A2525F3500300F2B51A /* 手表.mp4 in Resources */,
+				3279D69826A01ACA007C106F /* giftId-608a5a20bb58c31a408c7e9e.mp4 in Resources */,
 				321789EF25F3300700F2B51A /* LaunchScreen.storyboard in Resources */,
 				321789EC25F3300700F2B51A /* Assets.xcassets in Resources */,
 				321789EA25F3300500F2B51A /* Main.storyboard in Resources */,
@@ -501,6 +515,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FLCMLP3HZN;
 				INFOPLIST_FILE = project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -513,6 +528,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aplhaMetal.metal.project;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
 			};
 			name = Debug;
 		};
@@ -523,6 +539,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FLCMLP3HZN;
 				INFOPLIST_FILE = project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -535,6 +552,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aplhaMetal.metal.project;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
 			};
 			name = Release;
 		};
