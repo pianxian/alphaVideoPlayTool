@@ -12,6 +12,7 @@
 
 @interface SLMaskVideoPlayerLayer (){
     NSInteger _playCount;
+    dispatch_queue_t _loadValuesAsynchronouslyQueue_t;
 }
 
 @property (nonatomic,assign) id observer;
@@ -38,6 +39,7 @@
         _muted = NO;
         _loop = 1;
         _maskDirection = alphaVideoMaskDirectionLeftToRight;
+        _loadValuesAsynchronouslyQueue_t = dispatch_queue_create("loadValuesAsynchronously.loadValuesAsynchronously.mp4", DISPATCH_QUEUE_CONCURRENT);
         self.pixelBufferAttributes = @{@"PixelFormatType":@(kCMPixelFormat_32BGRA)};
         self.videoGravity = AVLayerVideoGravityResizeAspectFill;
         NSNotificationCenter *noficationCenter = [NSNotificationCenter defaultCenter];
@@ -154,11 +156,15 @@
 
     AVURLAsset *videoAsset = [AVURLAsset assetWithURL:videoURL];
     [videoAsset loadValuesAsynchronouslyForKeys:@[@"duration",@"tracks"] completionHandler:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-    
-            AVPlayerItem *playItem = [[AVPlayerItem alloc] initWithAsset:videoAsset];
-            [self intilizaAudioTacks:self->_muted];
-            [self intilizaPlayItem:playItem];
+        dispatch_async(self->_loadValuesAsynchronouslyQueue_t, ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+        
+                AVPlayerItem *playItem = [[AVPlayerItem alloc] initWithAsset:videoAsset];
+                _playItem = playItem;
+
+                [self intilizaAudioTacks:self->_muted];
+                [self intilizaPlayItem:playItem];
+            });
         });
     }];
 }
@@ -370,12 +376,14 @@
 }
 /// video begain play
 -(void)play{
-    _playing = YES;
-    [self initSession];
-    [_videoPlayer play];
-    _observer = [_videoPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
-        _currentTime = time;
-    }];
+    dispatch_barrier_sync(_loadValuesAsynchronouslyQueue_t, ^{
+        _playing = YES;
+        [self initSession];
+        [_videoPlayer play];
+        _observer = [_videoPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+            _currentTime = time;
+        }];
+    });
 }
 
 /// 设置Session
