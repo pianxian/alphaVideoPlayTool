@@ -35,3 +35,9 @@ _playerLayer.frame = self.view.bounds;
 下载后拖进项目并在buildSetting 中搜索 metal 
 在 Other Metal Linker Flags 和 Other Metal Compiler Flags中添加设置-fcikernel
 ![WX20210306-150744](https://user-images.githubusercontent.com/16642672/110198581-86fb3d00-7e8e-11eb-93c2-e43598c0db19.png)
+
+腾讯开源功能更加强大的https://github.com/pianxian/libpag
+VAP：https://github.com/pianxian/vap
+A
+AP
+
