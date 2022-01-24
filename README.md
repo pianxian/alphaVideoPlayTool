@@ -38,6 +38,5 @@ _playerLayer.frame = self.view.bounds;
 
 腾讯开源功能更加强大的https://github.com/pianxian/libpag
 VAP：https://github.com/pianxian/vap
-A
-AP
+
 
